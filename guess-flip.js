@@ -12,7 +12,7 @@ if (argv.call == undefined) {
 }
 else if (argv.call != "heads") {
     if (argv.call != "tails") {
-        console.error("Error: wrong input.\nUsage: node guess-flip --call=[heads|tails]");
+        console.error("Error: no input.\nUsage: node guess-flip --call=[heads|tails]");
         err = true;
     }
 }
