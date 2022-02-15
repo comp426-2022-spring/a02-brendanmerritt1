@@ -4,15 +4,17 @@ import minimist from "minimist";
 var argv = minimist(process.argv.slice(2))
 argv['call']
 
+var err = false;
+
 if (argv.call == undefined) {
-    console.error("Error: no input.\nUsage: node guess-flip --call=[heads|tails]")
-    throw new Error()
+    console.error("Error: no input.\nUsage: node guess-flip --call=[heads|tails]");
+    err = true;
 }
-if (argv.call != "heads") {
+else if (argv.call != "heads") {
     if (argv.call != "tails") {
-        console.error("Error: wrong input.\nUsage: node guess-flip --call=[heads|tails]")
-        throw new Error()
+        console.error("Error: wrong input.\nUsage: node guess-flip --call=[heads|tails]");
+        err = true;
     }
 }
 
-console.log(flipACoin(argv.call))
+if (err == false) { console.log(flipACoin(argv.call)); }
